@@ -23,6 +23,8 @@ function login(name) {
 // FOTO DE PERFIL
 document.getElementById("avatarInput").addEventListener("change", async (e) => {
   const file = e.target.files[0];
+  if (!file) return;
+
   const fileName = `${user}.png`;
 
   await supabase.storage.from("avatars").upload(fileName, file, {
@@ -46,7 +48,7 @@ async function loadProfile() {
     .eq("name", user)
     .single();
 
-  if (data.avatar_url) {
+  if (data?.avatar_url) {
     document.getElementById("avatarPreview").src = data.avatar_url;
   }
 }
@@ -54,7 +56,6 @@ async function loadProfile() {
 // ENVIAR TEXTO
 async function sendMessage() {
   const text = document.getElementById("text").value;
-
   if (!text) return;
 
   await supabase.from("messages").insert([{
@@ -142,7 +143,7 @@ function render(messages) {
     if (msg.type === "image") {
       const img = document.createElement("img");
       img.src = msg.file_url;
-      img.width = 120;
+      img.width = 150;
       div.appendChild(img);
     }
 
@@ -157,10 +158,14 @@ function render(messages) {
   });
 }
 
-// REALTIME + NOTIFICAÇÃO
+// TEMPO REAL + NOTIFICAÇÃO
 supabase
   .channel('chat')
-  .on('postgres_changes', { event: 'INSERT', schema: 'public', table: 'messages' }, payload => {
+  .on('postgres_changes', {
+    event: 'INSERT',
+    schema: 'public',
+    table: 'messages'
+  }, payload => {
 
     loadMessages();
 
