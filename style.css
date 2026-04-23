@@ -1,0 +1,22 @@
+body {
+  background: #111;
+  color: white;
+  font-family: Arial;
+  text-align: center;
+}
+
+button {
+  padding: 15px;
+  margin: 10px;
+  font-size: 18px;
+  border-radius: 12px;
+  border: none;
+}
+
+#messages {
+  height: 300px;
+  overflow-y: auto;
+  border: 1px solid #333;
+  margin: 10px;
+  padding: 10px;
+}
