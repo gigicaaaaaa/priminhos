@@ -1,0 +1,8 @@
+{
+  "name": "Chat dos Priminhos",
+  "short_name": "CHAT",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#111",
+  "theme_color": "#111"
+}
