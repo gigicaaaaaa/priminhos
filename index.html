@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Chat 💖</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+</head>
+
+<body>
+
+<div id="login">
+  <h1>Quem é você?</h1>
+  <button onclick="login('alice')">👧 Alice</button>
+  <button onclick="login('eduardo')">👦 Eduardo</button>
+</div>
+
+<div id="chat" style="display:none;">
+  <h2 id="username"></h2>
+
+  <img id="avatarPreview" width="80">
+  <input type="file" id="avatarInput">
+
+  <div id="messages"></div>
+
+  <input id="text" placeholder="Escreve..." />
+  <button onclick="sendMessage()">Enviar</button>
+
+  <input type="file" id="photoInput">
+  <button onclick="sendPhoto()">📷</button>
+
+  <button onclick="startRecording()">🎤</button>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
