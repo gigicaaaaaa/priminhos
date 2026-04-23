@@ -3,20 +3,36 @@ body {
   color: white;
   font-family: Arial;
   text-align: center;
+  font-size: 20px;
+}
+
+h1 {
+  font-size: 32px;
 }
 
 button {
-  padding: 15px;
-  margin: 10px;
-  font-size: 18px;
-  border-radius: 12px;
+  padding: 20px;
+  margin: 15px;
+  font-size: 22px;
+  border-radius: 16px;
   border: none;
+  width: 80%;
+  max-width: 300px;
+}
+
+input {
+  padding: 15px;
+  font-size: 20px;
+  width: 80%;
+  margin: 10px;
+  border-radius: 12px;
 }
 
 #messages {
-  height: 300px;
+  height: 350px;
   overflow-y: auto;
-  border: 1px solid #333;
+  border: 2px solid #333;
   margin: 10px;
   padding: 10px;
+  font-size: 20px;
 }
