@@ -2,8 +2,13 @@
 <html>
 <head>
   <title>Chat 💖</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
   <link rel="stylesheet" href="style.css">
   <link rel="manifest" href="manifest.json">
+
+  <!-- SUPABASE CDN CORRETO -->
+  <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
 </head>
 
 <body>
@@ -12,12 +17,13 @@
   <h1>Quem é você?</h1>
   <button onclick="login('alice')">👧 Alice</button>
   <button onclick="login('eduardo')">👦 Eduardo</button>
+  <button onclick="login('gigi')">💖 Gigi</button>
 </div>
 
 <div id="chat" style="display:none;">
   <h2 id="username"></h2>
 
-  <img id="avatarPreview" width="80">
+  <img id="avatarPreview" width="100">
   <input type="file" id="avatarInput">
 
   <div id="messages"></div>
@@ -25,13 +31,12 @@
   <input id="text" placeholder="Escreve..." />
   <button onclick="sendMessage()">Enviar</button>
 
-  <input type="file" id="photoInput">
+  <input type="file" id="photoInput" accept="image/*">
   <button onclick="sendPhoto()">📷</button>
 
-  <button onclick="startRecording()">🎤</button>
+  <button onclick="startRecording()">🎤 Gravar</button>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
 <script src="script.js"></script>
 
 </body>
